@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            background-color: #f4f6f8;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/001/225/154/non_2x/black-low-poly-geometric-background-vector.jpg);
+            
+
+
+        }
+        h1{
+            background-color: #000;
+            color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 6px;
+        }
+        form{
+            background-color: #fff;
+            padding:30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 800px;
+        }
+        label{
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bolder;
+            padding:10px
+        }
+        .input{
+            width: 100%;
+            padding: 20px 30px;
+            border: 2px solid black;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .btn{
+            padding: 20px 30px;
+            background-color: rgba(21, 21, 117, 0.819);
+            color: whitesmoke;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3 ease;
+            margin-left: 300px;
+
+        }
+        .btn:hover{
+            background-color: rgba(0, 0, 255, 0.852);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Search Student</h1>
+    <form action="{% url 'search_stu' %}" method="post">
+        {% csrf_token %}
+        <label for="q"> Enter Name<br><br>
+            <input type="text" name="search" placeholder="Enter name of student" id="q" required class="input"><br><br>
+            <input type="submit" value="Search" class="btn">
+        </label>
+
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .base {
+            background-image: url(https://static.vecteezy.com/system/resources/previews/001/401/677/non_2x/abstract-polygonal-shape-black-background-free-vector.jpg);
+            height: 700px;
+            padding: 80px 50px 30px;
+            color: white;
+            margin: 0;
+            display: flex;
+            background-size: 100% 100%;
+            background-repeat: repeat;
+        }
+
+        .content {
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 60px 30px;
+            font-size: 50px;
+            text-align: center;
+            background-color: rgba(74, 55, 66, 0.7);
+            box-shadow: 0 0 5px 5px whitesmoke;
+            margin-left: 30px;
+            margin-top: 60px;
+            max-height: fit-content;
+
+
+        }
+
+        .image {
+            border: 2px solid whitesmoke;
+            height: 425px;
+            width: 60%;
+            position: relative;
+            left: 70px;
+            margin-top: 60px;
+            box-shadow: 0 0 5px 8px whitesmoke;
+            animation-name: ani;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes ani {
+            0% {
+                background-image: url(https://www.shutterstock.com/image-photo/internet-educationonline-degreeelearning-education-conceptonline-260nw-2341578301.jpg);
+                background-size: 100% 100%;
+            }
+            33%{
+                background-image: url(https://media.istockphoto.com/id/2122148349/photo/writing-an-exam-at-the-university.jpg?s=612x612&w=0&k=20&c=LgVzLcd_cxNDQrolZFFqg7AIQnTd_xBrvdWfr-eVoK8=);
+                  background-size: 100% 100%;
+            }
+            66%{
+                background-image: url(https://media.istockphoto.com/id/949118068/photo/books.jpg?s=612x612&w=0&k=20&c=1vbRHaA_aOl9tLIy6P2UANqQ27KQ_gSF-BH0sUjQ730=);
+                background-size: 100% 100%;
+            }
+            100%{
+                background-image: url(https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg);
+                 background-size: 100% 100%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+    <div class="base">
+        <div class="content">
+            Welcome<br>To<br>Students<br>Management<br>System
+        </div>
+        <div class="image">
+
+        </div>
+
+
+
+
+    </div>
+    <footer style="text-align: center; padding: 15px; background-color: #0d47a1; color: #ffffff; font-size: 14px;">
+  &copy; 2025 Student Management System. All rights reserved.
+</footer>
+</body>
+
+</html>

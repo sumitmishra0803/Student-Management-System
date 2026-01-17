@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141e30, #243b55);
+            font-family: Arial, sans-serif;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/001/225/154/non_2x/black-low-poly-geometric-background-vector.jpg);
+        }
+
+
+        .form-container {
+            background: #f7f7f7;
+            max-width: 450px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            margin-left: 0px;
+        }
+
+        .form-container button {
+            width: 100%;
+            background: #00bcd4;
+            color: #fff;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #0097a7;
+        }
+
+        .back {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+
+        }
+
+        .back:hover {
+            background: #0097a7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Edit Student</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Full Name</label>
+            <input type="text" name="fname" value="{{data.name}}" required>
+
+            <label>Roll Number</label>
+            <input type="text" name="rollnumber" value="{{data.rollnumber}}" required>
+
+            <label>Email</label>
+            <input type="email" name="email" value="{{data.email}}" required>
+
+            <label>Course</label>
+            <input type="text" name="course" value="{{data.course}}">
+
+            <label>Date of Birth</label>
+            <input type="date" name="dob" value="{{data.dob}}">
+
+            <label>Phone</label>
+            <input type="text" name="phone" value="{{data.phone}}">
+
+            <label>Gender</label>
+            <select name="gender" value="{{data.gender}}">
+                <option value="Male" selected>Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Address</label>
+            <input type="text" name="address" value="{{data.Address}}">
+
+            <label>Total Fee</label>
+            <input type="number" name="tfee" value="{{data.tfee}}">
+
+            <label>Paid Fee</label>
+            <input type="number" name="pfee" value="{{data.pfee}}">
+
+            <label>Left Fee</label>
+            <input type="number" name="lfee" value="{{data.lfee}}">
+
+            <label>Current Image</label>
+            <input type="file" name="image" value="{{data.image}}">
+            <img src="{{ data.image.url }}" alt="Image not uploaded" height="150px">
+
+            <button type="submit">Update Student</button><br><br>
+            <a href="{% url 'admin_dashboard' %}" class="back"> Back To Dashboard</a>
+        
+
+        </form>
+    </div>
+    {% if error == "no" %}
+    <script>
+        alert("Data Updated Successfully")
+        window.location = ("{% url 'view_stu' %}")
+    </script>
+    {% endif %}
+
+
+    {% if error == "yes" %}
+    <script>
+        alert("Something Went Wrong")
+    </script>
+    {% endif %}
+
+
+</body>
+
+</html>

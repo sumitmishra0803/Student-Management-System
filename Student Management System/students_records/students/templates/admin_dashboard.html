@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<hq>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            background-color: #f4f6f8;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/001/225/154/non_2x/black-low-poly-geometric-background-vector.jpg);
+        }
+        h1{
+            background-color: black;
+            padding:20px;
+            text-align: center;
+            color:whitesmoke
+        }
+        .container{
+            margin:30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,min-max(150px 1fr));
+            gap: 20px;
+        }
+        .card{
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display:inline-block;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover{
+            transform: translate(5px);
+        }
+        .card h2{
+            margin-bottom: 5px;
+            color: #2ce50;
+        }
+        .card a{
+            display: inline-block;
+            margin-top: 5px;
+            background-color: #3498db;
+            color: whitesmoke;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+
+        }
+    
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Student Record Dashboard</h1>
+    <div class="container">
+        <div class="card">
+            <h2>Add Student</h2>
+            <a href="{% url 'add_student' %}">GO</a>
+        </div>
+        <div class="card">
+            <h2> View Students</h2>
+            <a href="{% url 'view_stu' %}">GO</a>
+        </div>
+        <div class="card">
+            <h2>Search</h2>
+            <a href="{% url 'search' %}">GO</a>
+        </div>
+        <div class="card">
+            <h2>Account</h2>
+            <a href="{% url 'account' %}">GO</a>
+        </div>
+        <div class="card">
+            <h2>LOGOUT</h2>
+            <a href="{% url 'Logout' %}"style="background:red;">GO</a>
+        </div>
+    </div>
+</body>
+</html>
